@@ -1,3 +1,6 @@
+<?php
+   session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,8 +31,8 @@
                     <input type="text" name="mailuid" placeholder="Username/E-mail..." class="form-control mr-sm-2">
                     <input type="password" name="pwd" placeholder="Password..." class="form-control mr-sm-2">
                     <button type="submit" name="login-submit" class="btn btn-outline-success my-2 my-sm-0">Login</button>
-                    <button class="btn btn-outline-success my-2 my-sm-0"><a href="signup.php">Signup</a></button>
                 </form>
+                <button class="btn btn-outline-success my-2 my-sm-0"><a href="signup.php">Signup</a></button>
                 <form action="includes/logout.inc.php" method="POST" class="form-inline my-2 my-md-0">
                     <button type="submit" name="logout-submit" class="btn btn-outline-success my-2 my-sm-0">Logout</button>
                 </form>
