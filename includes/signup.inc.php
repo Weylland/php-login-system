@@ -22,7 +22,7 @@ if(isset($_POST['signup-submit'])) {
         header("Location: ../signup.php?error=emptyfields&uid=".$username."&mail=".$email);
         exit();
     } elseif(!filter_var($email, FILTER_VALIDATE_EMAIL) && !preg_match("/^[a-zA-Z0-9]*$/", $username)) {
-        header("Location: ../signup.php?error=invalidmail&uid");
+        header("Location: ../signup.php?error=invalidmailuid");
         exit();
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         header("Location: ../signup.php?error=invalidmail&uid=".$username);
@@ -35,13 +35,14 @@ if(isset($_POST['signup-submit'])) {
         exit();
     } else {
         try {
-            $sqlUidCheck = "SELECT COUNT(*) FROM users WHERE uidUsers=:uid";
+            $sqlUidCheck = "SELECT COUNT(*) FROM users WHERE uidUsers=:uid OR emailUsers=:mail";
             $request = $conn->prepare($sqlUidCheck);
             $request->bindParam(':uid', $username);
+            $request->bindParam(':mail', $email);
             $request->execute();
 
             if($request->fetchColumn()) {
-                header("Location: ../signup.php?error=usertaken&mail=".$email);
+                header("Location: ../signup.php?error=userormailtaken&mail=".$email);
                 exit();
             } else {
                 $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
