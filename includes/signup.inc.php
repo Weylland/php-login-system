@@ -54,7 +54,7 @@ if(isset($_POST['signup-submit'])) {
                 $request->bindParam(':mail', $email);
                 $request->bindParam(':pwd', $hashedPwd);
                 $request->execute();
-                header("Location: ../signup.php?signup=success");
+                header("Location: ../index.php?signup=success");
                 exit();
             }
         } catch (PDOException $e) {
