@@ -8,8 +8,8 @@
             if(isset($_GET['signup'])) {
                 if($_GET['signup'] == "success"){
                     echo '        
-                    <div class="alert alert-primary alert-dismissible fade show">
-                        <p>vous vous êtes enregistré avec succès!</p>
+                    <div class="alert alert-primary alert-dismissible fade show m-5">
+                        <p class="text-center">vous vous êtes enregistré avec succès!</p>
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>

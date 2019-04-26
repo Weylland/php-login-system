@@ -33,6 +33,9 @@ if(isset($_POST['signup-submit'])) {
     } elseif($password !== $passwordRepeat) {
         header("Location: ../signup.php?error=passwordcheck&uid=".$username."&mail=".$email);
         exit();
+    } elseif(!preg_match("/^\S{8,}$/", $password)) {
+        header("Location: ../signup.php?error=passwordtoshort&uid=".$username."&mail=".$email);
+        exit();
     } else {
         try {
             $sqlUidCheck = "SELECT COUNT(*) FROM users WHERE uidUsers=:uid OR emailUsers=:mail";

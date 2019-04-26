@@ -7,19 +7,21 @@
         <?php
             if(isset($_GET['error'])) {
                 if($_GET['error'] == "emptyfields"){
-                    echo '<p class="alert alert-danger">Vous devez remplir tous les champs!</p>';
+                    echo '<p class="alert alert-danger text-center">Vous devez remplir tous les champs!</p>';
                 } elseif($_GET['error'] == "invalidmailuid") {
-                    echo '<p class="alert alert-danger">Le nom d\'utilisateur ou l\'email est invalide!</p>';
+                    echo '<p class="alert alert-danger text-center">Le nom d\'utilisateur ou l\'email est invalide!</p>';
                 } elseif($_GET['error'] == "invalidmail") {
-                    echo '<p class="alert alert-danger">l\'email est invalide!</p>';
+                    echo '<p class="alert alert-danger text-center">l\'email est invalide!</p>';
                 } elseif($_GET['error'] == "invaliduid") {
-                    echo '<p class="alert alert-danger">Le nom d\'utilisateur est invalide!</p>';
+                    echo '<p class="alert alert-danger text-center">Le nom d\'utilisateur est invalide!</p>';
                 } elseif($_GET['error'] == "passwordcheck") {
-                    echo '<p class="alert alert-danger">Le mot de passe est différent!</p>';
+                    echo '<p class="alert alert-danger text-center">Le mot de passe est différent!</p>';
+                } elseif($_GET['error'] == "passwordtoshort") {
+                    echo '<p class="alert alert-danger text-center">Le mot de passe doit faire au moins 8 caractères!</p>';
                 } elseif($_GET['error'] == "userormailtaken") {
-                    echo '<p class="alert alert-danger">Le nom d\'utilisateur ou l\'email est déjà pris!</p>';
+                    echo '<p class="alert alert-danger text-center">Le nom d\'utilisateur ou l\'email est déjà pris!</p>';
                 } elseif($_GET['error'] == "sqlerror") {
-                    echo '<p class="alert alert-danger">Le site rencontre quelques difficultés veuillez réessayer ultérieurement!</p>';
+                    echo '<p class="alert alert-danger text-center">Le site rencontre quelques difficultés veuillez réessayer ultérieurement!</p>';
                 }
             }
             ?>
